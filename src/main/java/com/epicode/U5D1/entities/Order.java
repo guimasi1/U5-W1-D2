@@ -24,6 +24,8 @@ public class Order {
     double totalCost;
 
     public Order(List<Item> items, int orderNumber, OrderStatus orderStatus, Table table, int numberOfGuests, LocalDateTime orderPlacementTime,double coverFee) {
+        if(numberOfGuests > table.getMaxNumberOfGuests()) throw new IllegalArgumentException("Il numero di ospiti deve essere minore di " + table.getMaxNumberOfGuests());
+
         this.items = items;
         this.orderNumber = orderNumber;
         this.orderStatus = orderStatus;

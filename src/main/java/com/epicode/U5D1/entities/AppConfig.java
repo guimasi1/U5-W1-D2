@@ -115,7 +115,7 @@ public class AppConfig {
 
 	@Bean(name = "table")
 	public Table getTable1 () {
-		return new Table(1,10);
+		return new Table(1,12);
 	}
 
 	@Bean(name = "order1")
