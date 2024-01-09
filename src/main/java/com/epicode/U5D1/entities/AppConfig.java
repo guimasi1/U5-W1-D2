@@ -1,12 +1,16 @@
 package com.epicode.U5D1.entities;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
+@PropertySource("application.properties")
 public class AppConfig {
 	@Bean(name = "toppings_tomato")
 	public Topping toppingTomatoBean() {
@@ -108,4 +112,20 @@ public class AppConfig {
 
 		return new Menu(pizzaList, drinkList, toppingsList);
 	}
+
+	@Bean(name = "table")
+	public Table getTable1 () {
+		return new Table(1,10);
+	}
+
+	@Bean(name = "order1")
+	public Order getOrder (@Value("${coverFee.price}") double coverFee) {
+		List<Item> items = new ArrayList<>();
+		items.add(pizzaHawaiianBean());
+		items.add(pizzaSalamiBean());
+		items.add(pizzaSalamiXlBean());
+		items.add(wineBean());
+		return new Order(items, 1,OrderStatus.INPROGRESS,getTable1(),2, LocalDateTime.now(), coverFee);
+	}
+
 }
