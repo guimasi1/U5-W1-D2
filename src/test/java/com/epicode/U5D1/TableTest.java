@@ -35,5 +35,10 @@ class TableTest {
 		assertEquals(table1.getMaxNumberOfGuests(),12);
 	}
 
+	@AfterAll
+	public static void closeContext() {
+		ctx.close();
+	}
+
 
 }

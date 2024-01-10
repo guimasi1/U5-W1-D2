@@ -35,5 +35,10 @@ public class OrderTest {
         assertEquals(fee,2.0);
     }
 
+    @AfterAll
+    public static void closeContext() {
+        ctx.close();
+    }
+
 
 }
