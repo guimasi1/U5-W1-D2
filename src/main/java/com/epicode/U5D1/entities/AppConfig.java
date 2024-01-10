@@ -40,6 +40,7 @@ public class AppConfig {
 
 	@Bean(name = "pizza_margherita")
 	public Pizza pizzaMargheritaBean() {
+
 		List<Topping> tList = new ArrayList<>();
 		tList.add(toppingTomatoBean());
 		tList.add(toppingCheeseBean());

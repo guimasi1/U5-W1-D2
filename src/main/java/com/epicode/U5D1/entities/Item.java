@@ -2,6 +2,8 @@ package com.epicode.U5D1.entities;
 
 import lombok.Getter;
 
+import java.util.List;
+
 @Getter
 public abstract class Item {
 
@@ -12,5 +14,6 @@ public abstract class Item {
 		this.calories = calories;
 		this.price = price;
 	}
+
 
 }
