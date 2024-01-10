@@ -23,10 +23,7 @@ class TableTest {
 
 	}
 
-	@AfterAll
-	static void closeContext() {
-		ctx.close();
-	}
+
 
 	@Test
 	void tableIsAvailable() {
